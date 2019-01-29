@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "417744667300",
+    "firebase_url": "https://signin-app-ac22c.firebaseio.com",
+    "project_id": "signin-app-ac22c",
+    "storage_bucket": "signin-app-ac22c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417744667300:android:dc8d5c42f0b869b5",
+        "android_client_info": {
+          "package_name": "com.example.rushi.signinapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "417744667300-tdbghnlpc080on5qb65dohn7ptm9qrm3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rushi.signinapp",
+            "certificate_hash": "5c1af42c711610f208b0e9e191a9ae5121681188"
+          }
+        },
+        {
+          "client_id": "417744667300-i4mccmhuemrqsi97ut4jdu4r7gvnsd9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwxmPDMLFeVHAbv0jkIFMhjY5U5lygt9c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "417744667300-i4mccmhuemrqsi97ut4jdu4r7gvnsd9s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
