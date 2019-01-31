@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#1995BC"
-    tools:context=".MainActivity">
+    android:background="#1995BC">
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,16 +31,41 @@
         android:orientation="vertical"
         android:background="@android:color/white">
         <EditText
+            android:id="@+id/fullname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24sp"
-            android:hint="Username"
+            android:hint="Enter full name"
             android:textSize="24sp"/>
         <EditText
+            android:id="@+id/phonenumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24sp"
-            android:hint="Password"
+            android:hint="Enter phone number"
+            android:inputType="phone"
+            android:textSize="24sp"/>
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24sp"
+            android:hint="Enter username"
+            android:textSize="24sp"/>
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24sp"
+            android:hint="Enter password"
+            android:inputType="textPassword"
+            android:textSize="24sp"/>
+        <EditText
+            android:id="@+id/repassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24sp"
+            android:hint="Re-enter password"
             android:inputType="textPassword"
             android:textSize="24sp"/>
     </LinearLayout>
@@ -51,17 +74,8 @@
         android:layout_height="wrap_content"
         android:background="#61CAEB"
         android:textColor="#FFFFFF"
-        android:text="Log in"
+        android:text="Sign in"
+        android:onClick="onSignup"
         android:layout_gravity="center_horizontal"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="148sp"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:clickable="true"
-        android:onClick="signup"
-        android:text="Sign up for iHealth"/>
 
 </LinearLayout>
