@@ -41,24 +41,6 @@ public class SignUp extends AppCompatActivity
         srepassword = repassword.getText().toString();
         found_user=false;
 
-        //TODO: Problem with checking existing users, Delay not working. Would have to make it work in sync.
-        if(checkUser(susername))
-            Toast.makeText(getApplicationContext(), "Username is unavailable.", Toast.LENGTH_SHORT).show();
-        else if(sfullname.equals("") || sphonenumber.equals("") || susername.equals("") || spassword.equals("") || srepassword.equals(""))
-            Toast.makeText(getApplicationContext(), "All fields are mandatory!", Toast.LENGTH_SHORT).show();
-        else if(!spassword.equals(srepassword))
-            Toast.makeText(getApplicationContext(),"Password does not match with re-entered password!",Toast.LENGTH_SHORT).show();
-        else if(!found_user)
-            writeNewUser(sfullname,sphonenumber,susername,spassword);
-
-        fullname.setText("");
-        phonenumber.setText("");
-        username.setText("");
-        password.setText("");
-        repassword.setText("");
-    }
-    private boolean checkUser(final String susername)
-    {
         mDatabase.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -69,18 +51,32 @@ public class SignUp extends AppCompatActivity
                         found_user = true;
                     }
                 }
+
+                if(found_user)
+                    Toast.makeText(getApplicationContext(), "Username is unavailable.", Toast.LENGTH_SHORT).show();
+                else if(sfullname.equals("") || sphonenumber.equals("") || susername.equals("") || spassword.equals("") || srepassword.equals(""))
+                    Toast.makeText(getApplicationContext(), "All fields are mandatory!", Toast.LENGTH_SHORT).show();
+                else if(!spassword.equals(srepassword))
+                    Toast.makeText(getApplicationContext(),"Password does not match with re-entered password!",Toast.LENGTH_SHORT).show();
+                else if(!found_user)
+                    writeNewUser(sfullname,sphonenumber,susername,spassword);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(getApplicationContext(),"cancel", Toast.LENGTH_SHORT).show();
             }
         });
-        return found_user;
+
+        fullname.setText("");
+        phonenumber.setText("");
+        username.setText("");
+        password.setText("");
+        repassword.setText("");
     }
 
     private void writeNewUser(String fullname, String phonenumber, String username, String password)
     {
-        Toast.makeText(getApplicationContext(),"New user: "+username+" added! ",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"New user: "+username+" added!",Toast.LENGTH_SHORT).show();
         User user = new User(fullname,phonenumber,username,password);
         mDatabase.child("users").child(user.getUsername()).setValue(user);
         Intent mainscreen = new Intent(getApplicationContext(), MainActivity.class);
