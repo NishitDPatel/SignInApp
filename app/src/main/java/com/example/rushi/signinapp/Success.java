@@ -36,13 +36,16 @@ public class Success extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        String user;
-        user = intent.getStringExtra(MainActivity.EXTRA_SUCCESS);//receive the MAC address of the bluetooth device
+        String username, fullname;
+        username = intent.getStringExtra(MainActivity.EXTRA_USERNAME);//receive the MAC address of the bluetooth device
+        fullname = intent.getStringExtra(MainActivity.EXTRA_USERNAME);//receive the MAC address of the bluetooth device
+
 
         setContentView(R.layout.activity_success);
-        TextView name = (TextView) findViewById(R.id.name);
-        name.setText(user);
-
+        TextView usernameTextView = (TextView) findViewById(R.id.username);
+        TextView fullnameTextView = (TextView) findViewById(R.id.fullname);
+        usernameTextView.setText(username);
+        fullnameTextView.setText(fullname);
         //if the device has bluetooth
         //myBluetooth = BluetoothAdapter.getDefaultAdapter();
 
