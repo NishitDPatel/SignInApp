@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     boolean found_user, match_password;
     public static User user;
+    public static String EXTRA_SUCCESS = "SUCCESS";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                             //Same problem happening here
                             //TODO next activity
                             Intent success = new Intent(getApplicationContext(), Success.class);
+                            success.putExtra(EXTRA_SUCCESS, susername);
                             startActivity(success);
                         }
                     }
