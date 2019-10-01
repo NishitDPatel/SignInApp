@@ -1,0 +1,27 @@
+sudo: required
+matrix:
+  include:
+  - language: android
+    jdk: oraclejdk8
+    android:
+      components:
+      - build-tools-29.0.2
+      - android-29
+      - tools
+      - platform-tools
+      - tools
+    before_install:
+    - chmod +x Android/gradlew
+    install:
+    - echo yes | ${ANDROID_HOME}/tools/bin/sdkmanager "platforms;android-29"
+    script:
+    - "./Android/gradlew build"
+  - language: node_js
+    node_js:
+    - 10.16.3
+    before_install:
+    - chmod +x PRcheck.sh
+    install:
+    - npm install -g firebase-tools
+    script:
+    - ./PRcheck.sh "$TRAVIS_PULL_REQUEST" "$FIREBASE_TOKEN"
