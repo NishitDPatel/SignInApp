@@ -68,14 +68,22 @@
             android:hint="Re-enter password"
             android:inputType="textPassword"
             android:textSize="24sp"/>
+        <TextView
+            android:id="@+id/password_error"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="password not matching"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_dark"/>
     </LinearLayout>
     <Button
+        android:id="@+id/signup"
         android:layout_width="324sp"
         android:layout_height="wrap_content"
         android:background="#61CAEB"
         android:textColor="#FFFFFF"
         android:text="Sign in"
-        android:onClick="onSignup"
         android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>
