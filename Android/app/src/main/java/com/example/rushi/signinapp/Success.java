@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
@@ -52,8 +54,13 @@ public class Success extends AppCompatActivity {
         MACaddress = "FC:A8:9A:00:31:DE";
         deviceName = "HC-05";
 
-        new ConnectBT().execute();//Call the class to connect
+        //new ConnectBT().execute();//Call the class to connect
+    }
 
+    @Override
+    protected void onDestroy() {
+        FirebaseAuth.getInstance().signOut();
+        super.onDestroy();
     }
 
     public void sendData(View view)

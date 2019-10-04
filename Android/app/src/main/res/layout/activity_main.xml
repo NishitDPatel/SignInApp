@@ -51,6 +51,7 @@
             android:textSize="24sp"/>
     </LinearLayout>
     <Button
+        android:id="@+id/login"
         android:layout_width="324sp"
         android:layout_height="wrap_content"
         android:background="#61CAEB"
